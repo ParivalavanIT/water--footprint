@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Water Footprint</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://www.vantajs.com/dist/vanta.birds.min.js"></script>
+    <style>
+body,
+ul,
+li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* Custom navbar styles */
+.custom-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #00ffd5;
+    color: #fff;
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+    z-index: 1000;
+}
+
+.custom-navbar .custom-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.custom-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: inherit;
+}
+
+.custom-menu li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.custom-menu a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+}
+
+/* Vanta.js background */
+.vanta-bg {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+        /* Glassmorphic Styles for Description Box */
+.glassmorphic-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* Adjust height or padding as needed */
+}
+
+.glassmorphic-container {
+    
+color: #ffffff;
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+}
+
+.glassmorphic-box {
+    padding: 30px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.glassmorphic-title {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.glassmorphic-subtitle {
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+.glassmorphic-field {
+    margin-bottom: 15px;
+}
+
+.glassmorphic-label {
+    color: #ffffff;
+}
+
+.glassmorphic-control {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
+    padding: 8px;
+}
+
+.glassmorphic-input {
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    text-align: center;
+}
+
+.glassmorphic-button {
+    background-color: #ffffff;
+    color: #000000;
+    font-weight: bolder;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.glassmorphic-button:hover {
+    background-color: #00e0ba;
+}
+
+.glassmorphic-result {
+    font-size: 16px;
+    color: #ffffff;
+}
+
+    </style>
+</head>
+
+<body>
+
+    <nav class="custom-navbar" role="navigation" aria-label="main navigation">
+        <div class="custom-container">
+            <a class="custom-brand" href="/">
+                Your Logo
+            </a>
+
+        </div>
+
+    </nav>
+    <div id="vanta-bg" class="vanta-bg">
+<script>
+    function calculateWaterFootprint() {
+        const kgInput = document.getElementById('kgInput').value;
+        const waterFootprint = kgInput * selectedItem.waterFootprint.average;
+
+        document.getElementById('resultMessage').innerHTML = `Water Footprint for ${kgInput} kg: ${waterFootprint} liters`;
+    }
+</script>
+
+<section class="glassmorphic-section">
+    <div class="glassmorphic-container">
+        <div class="glassmorphic-box">
+            <h1 class="glassmorphic-title">
+                <%= selectedItem.name %>
+            </h1>
+            <h3 class="glassmorphic-subtitle"> <%= selectedItem.waterFootprint.average %> liters
+            </h3>
+            <h5> <%= selectedItem.waterFootprint.range %>
+            </h5>
+            <h6> <%= selectedItem.details %>
+            </h6>
+
+            <!-- Input field for number of kilograms -->
+            <div class="glassmorphic-field">
+                <label class="glassmorphic-label">Number of Kilograms:</label>
+                <input id="kgInput" class="glassmorphic-control glassmorphic-input" type="number"
+                    placeholder="Enter kilograms">
+            </div>
+
+            <!-- Button to calculate water footprint -->
+            
+            <script>
+                function calculateWaterFootprint() {
+                    const kgInput = document.getElementById('kgInput').value;
+                    const waterFootprint = kgInput * <%= selectedItem.waterFootprint.average %>;
+
+                    document.getElementById('resultMessage').innerHTML = `Water Footprint for ${kgInput} kg: ${waterFootprint} liters`;
+                }
+            </script>
+            <button onclick="calculateWaterFootprint()" class="glassmorphic-button">Calculate Water Footprint</button>
+            <!-- Result message -->
+            <p id="resultMessage" class="glassmorphic-result"></p>
+        </div>
+    </div>
+</section>
+
+
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.js"></script>
+
+
+
+<script>
+    VANTA.BIRDS({
+        el: "#vanta-bg",
+        mouseControls: true,
+        touchControls: true,
+        minHeight: 200,
+        minWidth: 200,
+        scale: 1.0,
+        scaleMobile: 1.0,
+        backgroundColor: 0x0,
+    });
+</script>
+</body>
+
+</html>

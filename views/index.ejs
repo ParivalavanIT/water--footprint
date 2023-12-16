@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Water Footprint</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://www.vantajs.com/dist/vanta.birds.min.js"></script>
+    <style>
+        /* Resetting default styles */
+body,
+ul,
+li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* Custom navbar styles */
+.custom-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #00ffd5;
+    color: #fff;
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+    z-index: 1000;
+}
+
+.custom-navbar .custom-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.custom-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: inherit;
+}
+
+.custom-menu li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.custom-menu a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+}
+
+/* Vanta.js background */
+.vanta-bg {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Glassmorphic 3x3 Grid Layout */
+.glassmorphic-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjust as needed */
+    gap: 20px;
+}
+
+.glassmorphic-item {
+    text-align: center;
+}
+.glassmorphic-box {
+    padding: 30px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+.glassmorphic-button {
+    background-color: #f0f0f0;
+    border: none;
+    border-radius: 20px;
+    padding: 15px 20px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: block;
+    
+}
+
+.glassmorphic-button:hover {
+    transform: translateY(2px);
+}
+
+    </style>
+  
+</head>
+
+<body>
+
+    <nav class="custom-navbar" role="navigation" aria-label="main navigation">
+        <div class="custom-container">
+            <a class="custom-brand" href="/">
+                Your Logo
+            </a>
+
+        </div>
+
+    </nav>
+    <div id="vanta-bg" class="vanta-bg">
+
+<section class="glassmorphic-section glassmorphic-box">
+    <div class="glassmorphic-container">
+       
+        <div class="glassmorphic-grid">
+            <% for (const category in categories) { %>
+                <div class="glassmorphic-item">
+                    <a href="/category/<%= category %>" class="glassmorphic-button">
+                        <%= category %>
+                    </a>
+                </div>
+                <% } %>
+        </div>
+    </div>
+</section>
+
+
+
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.js"></script>
+
+
+<script>
+    VANTA.BIRDS({
+        el: "#vanta-bg",
+        mouseControls: true,
+        touchControls: true,
+        minHeight: 200,
+        minWidth: 200,
+        scale: 1.0,
+        scaleMobile: 1.0,
+        backgroundColor: 0x0,
+    });
+</script>
+</body>
+
+</html>
