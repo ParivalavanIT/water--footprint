@@ -10,104 +10,109 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://www.vantajs.com/dist/vanta.birds.min.js"></script>
     <style>
-        /* Resetting default styles */
-body,
-ul,
-li {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
+                    /* Resetting default styles */
+            body,
+            ul,
+            li {
+                margin: 0;
+                padding: 0;
+                list-style: none;
+            }
 
-/* Custom navbar styles */
-.custom-navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    background-color: #00ffd500;
-    color: #fff;
-    height: 3.5rem;
-    display: flex;
-    align-items: center;
-    z-index: 1000;
-}
+            /* Custom navbar styles */
+            .custom-navbar {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                background-color: #00ffd500;
+                color: #fff;
+                height: 3.5rem;
+                display: flex;
+                align-items: center;
+                z-index: 1000;
+            }
 
-.custom-navbar .custom-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
+            .custom-navbar .custom-container {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 0 20px;
+            }
 
-.custom-brand {
-    font-size: 1.5rem;
-    font-weight: bold;
-    text-decoration: none;
-    color: inherit;
-}
+            .custom-brand {
+                font-size: 1.5rem;
+                font-weight: bold;
+                text-decoration: none;
+                color: inherit;
+            }
 
-.custom-menu li {
-    display: inline-block;
-    margin-right: 20px;
-}
+            .custom-menu li {
+                display: inline-block;
+                margin-right: 20px;
+            }
 
-.custom-menu a {
-    text-decoration: none;
-    color: #fff;
-    font-size: 1rem;
-}
+            .custom-menu a {
+                text-decoration: none;
+                color: #fff;
+                font-size: 1rem;
+            }
 
-/* Vanta.js background */
-.vanta-bg {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
+            /* Vanta.js background */
+            .vanta-bg {
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+            }
 
-/* Glassmorphic 3x3 Grid Layout */
-.glassmorphic-grid {
-   
-    display: grid;
-    grid-template-columns: 1fr 1fr ;
-    gap: 20px;
-   
-  
-}
+            /* Glassmorphic 3x3 Grid Layout */
+            .glassmorphic-grid {
+            
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr ;
+                gap: 20px;
+            
+            
+            }
 
-.glassmorphic-item {
-    text-align: center;
-}
-.glassmorphic-box {
-    padding: 30px;
-    border-radius: 20px;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-}
-.glassmorphic-button {
-    background-color: #f0f0f06b;
-    backdrop-filter: blur(10px);
-    border: solid 1px #ffffff;
-    border-radius: 20px;
-    padding: 15px 20px;
-    transition: all 0.3s ease;
-    text-decoration: none;
-    display: block;
-    color: black;
-    font-weight: bolder;
-}
+            .glassmorphic-item {
+                text-align: center;
+            }
+            .glassmorphic-box {
+                padding: 30px;
+                border-radius: 20px;
+                background: rgba(255, 255, 255, 0.1);
+                backdrop-filter: blur(10px);
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                transition: all 0.3s ease;
+            }
+            .glassmorphic-button {
+                background-color: #f0f0f028;
+                backdrop-filter: blur(10px);
+                border: solid 1px #ffffff;
+                border-radius: 20px;
+                padding: 15px 20px;
+                transition: all 0.3s ease;
+                text-decoration: none;
+                display: flex;
+                flex-direction: column;
+                color: black;
+                font-weight: bolder;
+            }
 
 
-.glassmorphic-button:hover {
-    transform: translateY(2px);
-}
-
+            .glassmorphic-button:hover {
+                transform: translateY(2px);
+            }
+            .glassmorphic-button a{
+                text-decoration: none;
+                color: rgb(255, 250, 250);
+                font-weight: bolder;
+            }
     </style>
   
 </head>
@@ -125,27 +130,22 @@ li {
     </nav>
     <div id="vanta-bg" class="vanta-bg">
 
-<section class="glassmorphic-section glassmorphic-box">
-    <div class="glassmorphic-container">
-        <div class="glassmorphic-grid">
-            <% for (const category in categories) { %>
-                <div class="glassmorphic-item">
-                    <a href="/category/<%= category %>" class="glassmorphic-button">
-                        <i class="fas <%= categories[category][0].icon %>"></i>
-                        <span>
-                            <%= category %>
-                        </span>
-                    </a>
+    <section class="glassmorphic-section glassmorphic-box">
+        <div class="glassmorphic-container">
+            <div class="glassmorphic-grid">
+                <% for (const category in categories) { %>
+                    <div class="glassmorphic-item glassmorphic-button">
+                    
+                        <a href="/category/<%= category %>" >
+                            <img src="<%= categories[category][0].image %>" alt="">
+                            <span>
+                                <%= category %>
+                            </span>
+                        </a>
+                    </div>
+                    <% } %>
                 </div>
-                <% } %>
-        </div
-
-
-
-
-
-
-</div>
+    </section>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.js"></script>
 
