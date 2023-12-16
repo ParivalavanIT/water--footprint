@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const port = 3000 || process.env.PORT;
+const port = 4000 || process.env.PORT;
 
 
 const categories = require("./public/categories");
@@ -37,6 +37,6 @@ app.get("/category/:categoryName/:itemName", (req, res) => {
   }
 });
 
-app.listen(port, () => {
+app.listen(port, function () {
   console.log(`Server running on http://localhost:${port}`);
 });
