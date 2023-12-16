@@ -6,8 +6,7 @@
     <title>Water Footprint</title>
     <link href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-<script src="https://www.vantajs.com/dist/vanta.birds.min.js"></script>
+
 <style>
     /* Resetting default styles */
 body,
@@ -180,17 +179,19 @@ li {
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.js"></script>
 
+<script src="/js/three.r134.min.js"></script>
+<script src="/js/vanta.birds.min.js"></script>
 
 <script>
-    VANTA.BIRDS({
+    VANTA.WAVES({
         el: "#vanta-bg",
-        mouseControls: true,
+         mouseControls: true,
         touchControls: true,
-        minHeight: 200,
-        minWidth: 200,
-        scale: 1.0,
-        scaleMobile: 1.0,
-        backgroundColor: 0x0,
+        gyroControls: false,
+        minHeight: 200.00,
+        minWidth: 200.00,
+        scale: 1.00,
+        scaleMobile: 1.00
     });
 </script>
 </body>
