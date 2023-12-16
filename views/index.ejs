@@ -71,9 +71,11 @@ li {
 
 /* Glassmorphic 3x3 Grid Layout */
 .glassmorphic-grid {
+   
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr 1fr ;
     gap: 20px;
+   
   
 }
 
@@ -89,26 +91,18 @@ li {
     transition: all 0.3s ease;
 }
 .glassmorphic-button {
-    background-color: #f0f0f0;
-    border: none;
+    background-color: #f0f0f06b;
+    backdrop-filter: blur(10px);
+    border: solid 1px #ffffff;
     border-radius: 20px;
     padding: 15px 20px;
     transition: all 0.3s ease;
     text-decoration: none;
     display: block;
-    
+    color: black;
+    font-weight: bolder;
 }
-.glassmorphic-row-break {
-    width: 100%;
-    height: 0;
-    margin: 0;
-    padding: 0;
-    border: none;
-    clear: both;
-    /* Adjust the margin-top and margin-bottom to create space between rows */
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
+
 
 .glassmorphic-button:hover {
     transform: translateY(2px);
@@ -134,25 +128,18 @@ li {
 <section class="glassmorphic-section glassmorphic-box">
     <div class="glassmorphic-container">
         <div class="glassmorphic-grid">
-            <% let index=0; %>
-                <% for (const category in categories) { %>
-                    <div class="glassmorphic-item">
-                        <a href="/category/<%= category %>" class="glassmorphic-button">
-                            <i class="fas <%= categories[category][0].icon %>"></i>
-                            <span>
-                                <%= category %>
-                            </span>
-                        </a>
-                    </div>
-                    <% index++; %>
-                        <% if (index % 2===0) { %>
-                            <!-- Insert a new row after every 2 items -->
-                            <div class="glassmorphic-row-break"></div>
-                            <% } %>
-                                <% } %>
-        </div>
-    </div>
-</section>
+            <% for (const category in categories) { %>
+                <div class="glassmorphic-item">
+                    <a href="/category/<%= category %>" class="glassmorphic-button">
+                        <i class="fas <%= categories[category][0].icon %>"></i>
+                        <span>
+                            <%= category %>
+                        </span>
+                    </a>
+                </div>
+                <% } %>
+        </div
+
 
 
 

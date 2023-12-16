@@ -127,6 +127,72 @@ const categories = {
         "Cotton cultivation is water-intensive, especially in arid regions without sustainable irrigation.",
     },
   ],
+  Hygiene: [
+    {
+      name: "Toothpaste",
+      waterFootprint: { average: 50, range: "40-60 liters" },
+      details: "Water usage includes ingredients and packaging manufacturing.",
+    },
+    {
+      name: "Shampoo",
+      waterFootprint: { average: 80, range: "60-100 liters" },
+      details: "Varies based on formula and bottle size.",
+    },
+    {
+      name: "Soap",
+      waterFootprint: { average: 30, range: "20-40 liters" },
+      details: "Depends on ingredients and production methods.",
+    },
+    {
+      name: "Deodorant",
+      waterFootprint: { average: 70, range: "50-90 liters" },
+      details: "Includes water used in formulation and packaging.",
+    },
+  ],
+  Kitchen: [
+    {
+      name: "Coffee",
+      waterFootprint: { average: 140, range: "100-180 liters" },
+      details: "Water usage includes cultivation, processing, and brewing.",
+    },
+    {
+      name: "Tea",
+      waterFootprint: { average: 30, range: "20-40 liters" },
+      details: "Varies based on type and preparation.",
+    },
+    {
+      name: "Milk",
+      waterFootprint: { average: 1000, range: "800-1200 liters" },
+      details: "Includes water used in dairy farming and processing.",
+    },
+    {
+      name: "Bottled Water",
+      waterFootprint: { average: 5, range: "3-8 liters" },
+      details: "Water usage includes packaging and bottling processes.",
+    },
+  ],
+  Household: [
+    {
+      name: "Laundry Detergent",
+      waterFootprint: { average: 100, range: "80-120 liters" },
+      details: "Includes water used in production and dilution.",
+    },
+    {
+      name: "Cleaning Spray",
+      waterFootprint: { average: 40, range: "30-50 liters" },
+      details: "Varies based on ingredients and packaging.",
+    },
+    {
+      name: "Tissue Paper",
+      waterFootprint: { average: 10, range: "5-15 liters" },
+      details: "Depends on production methods and material sources.",
+    },
+    {
+      name: "Dish Soap",
+      waterFootprint: { average: 60, range: "50-70 liters" },
+      details: "Water usage includes formulation and packaging.",
+    },
+  ],
 };
 
 module.exports = categories;
