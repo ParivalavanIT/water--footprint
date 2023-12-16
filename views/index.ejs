@@ -121,18 +121,27 @@ li {
 
 <section class="glassmorphic-section glassmorphic-box">
     <div class="glassmorphic-container">
-       
         <div class="glassmorphic-grid">
-            <% for (const category in categories) { %>
-                <div class="glassmorphic-item">
-                    <a href="/category/<%= category %>" class="glassmorphic-button">
-                        <%= category %>
-                    </a>
-                </div>
-                <% } %>
+            <% let index=0; %>
+                <% for (const category in categories) { %>
+                    <div class="glassmorphic-item">
+                        <a href="/category/<%= category %>" class="glassmorphic-button">
+                            <i class="fas <%= categories[category][0].icon %>"></i>
+                            <span>
+                                <%= category %>
+                            </span>
+                        </a>
+                    </div>
+                    <% index++; %>
+                        <% if (index % 2===0) { %>
+                            <!-- Insert a new row after every 2 items -->
+                            <div class="glassmorphic-row-break"></div>
+                            <% } %>
+                                <% } %>
         </div>
     </div>
 </section>
+
 
 
 
