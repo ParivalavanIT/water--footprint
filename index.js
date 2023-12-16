@@ -1,9 +1,9 @@
 const express = require("express");
 const app = express();
-const port = 3000;
+const port = 3000 || process.env.PORT;
 
 
-const categories = require("./categories");
+const categories = require("./public/categories");
 
 app.set("view engine", "ejs");
 app.use(express.static("public"));
@@ -33,7 +33,6 @@ app.get("/category/:categoryName/:itemName", (req, res) => {
   if (selectedItem) {
     res.render("description", { selectedItem, description });
   } else {
-    // Handle case where the item is not found
     res.status(404).send("Item not found");
   }
 });
