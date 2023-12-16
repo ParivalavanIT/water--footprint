@@ -1,0 +1,7 @@
+{
+    "version":2,
+    "name":"Water--footprint",
+    "builds":[{"src":"index.js","use":"@vercel/node"}],
+    "routes":[{"src":"/","dest":"/index.js"}]
+
+}
