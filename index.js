@@ -1,13 +1,13 @@
 const express = require("express");
 const app = express();
-const port = 9001 || process.env.PORT;
+const port =process.env.PORT;
 
 const categories = require("./public/categories");
 
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 
-app.get("/", (req, res) => {
+app.get("/api", (req, res) => {
   res.render("index", { categories });
 });
 
