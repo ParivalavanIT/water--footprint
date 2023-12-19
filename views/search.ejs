@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Water Footprint</title>
+
+    <!-- Your CSS links -->
+    <link href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+    <style>
+        /* Glassmorphic styles */
+.glass-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.glassmorphic-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.glassmorphic-item {
+    text-align: center;
+}
+
+.glassmorphic-box {
+    padding: 30px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    width: 80%;
+    max-width: 600px;
+    margin: auto;
+}
+
+.glassmorphic-box h2 {
+    margin-bottom: 20px;
+}
+
+.glassmorphic-box ul {
+    list-style: none;
+    padding: 0;
+}
+
+.glassmorphic-box ul li {
+    margin-bottom: 10px;
+}
+
+.glassmorphic-box a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+.glassmorphic-box a {
+    color: #000000;
+}
+
+    </style>
+
+</head>
+
+<body >
+
+    <!-- Your navigation bar -->
+    <!-- ... -->
+
+<div id="vanta-bg" class="vanta-bg">
+    <div class="glass-container">
+        <div class="glassmorphic-grid">
+            <div class="glassmorphic-item">
+                <div class="glassmorphic-box">
+                    <h2>Search Results for "<%= query %>"</h2>
+                    <% if (filteredCategories.length> 0) { %>
+                        <ul>
+                            <% filteredCategories.forEach(category=> { %>
+                                <li>
+                                    <a href="/category/<%= category %>">
+                                        <%= category %>
+                                    </a>
+                                </li>
+                                <% }); %>
+                        </ul>
+                        <% } else { %>
+                            <p>No results found for "<%= query %>".</p>
+                            <% } %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.js"></script>
+
+<script src="/js/three.r134.min.js"></script>
+<script src="/js/vanta.birds.min.js"></script>
+
+<script>
+    VANTA.WAVES({
+        el: "#vanta-bg",
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: false,
+        minHeight: 200.00,
+        minWidth: 200.00,
+        scale: 1.00,
+        scaleMobile: 1.00
+    });
+</script>
+
+</body>
+
+</html>

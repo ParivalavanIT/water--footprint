@@ -131,6 +131,15 @@
     <div id="vanta-bg" class="vanta-bg">
 
     <section class="glassmorphic-section glassmorphic-box">
+        <div class="custom-container">
+            <a class="custom-brand" href="/">
+                Your Logo
+            </a>
+            <form action="/search" method="GET" class="custom-search">
+                <input type="text" name="query" placeholder="Search..." class="search-input">
+                <button type="submit" class="search-button">Search</button>
+            </form>
+        </div>
         <div class="glassmorphic-container">
             <div class="glassmorphic-grid">
                 <% for (const category in categories) { %>

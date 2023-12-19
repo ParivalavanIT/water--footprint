@@ -33,6 +33,34 @@ app.get("/category/:categoryName/:itemName", (req, res) => {
     res.status(404).send("Item not found");
   }
 });
+// Existing routes
+
+// Route to handle search
+app.get('/search', (req, res) => {
+  const { query } = req.query; // Get the search query from the request
+  
+  // Filter categories based on the search query
+  const filteredCategories = Object.keys(categories).filter(category => {
+    // Filter logic based on category name or item names
+    const categoryLowerCase = category.toLowerCase();
+    if (categoryLowerCase.includes(query.toLowerCase())) {
+      return true; // Include the category if it matches the search query
+    }
+
+    // Check item names in the category
+    const items = categories[category];
+    for (const item of items) {
+      if (item.name.toLowerCase().includes(query.toLowerCase())) {
+        return true; // Include the category if any item matches the search query
+      }
+    }
+
+    return false;
+  });
+
+  // Render the filtered categories on the search results page
+  res.render('search', { filteredCategories, query });
+});
 
 app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);
